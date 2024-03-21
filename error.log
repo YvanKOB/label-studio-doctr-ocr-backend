@@ -1,0 +1,141 @@
+[2024-03-21 13:52:01,930] [INFO] [label_studio_tools.core.utils.io::get_local_path::82] Resolving url using hostname [http://0.0.0.0:8080] from LSB: http://0.0.0.0:8080/data/upload/3/5aed5a4c-3.jpg
+[2024-03-21 13:52:01,930] [INFO] [label_studio_tools.core.utils.io::get_local_path::101] Download http://0.0.0.0:8080/data/upload/3/5aed5a4c-3.jpg to /root/.cache/label-studio/0cc321__5aed5a4c-3.jpg
+[2024-03-21 13:52:01,931] [DEBUG] [urllib3.connectionpool::_new_conn::244] Starting new HTTP connection (1): 0.0.0.0:8080
+[2024-03-21 13:52:01,931] [ERROR] [label_studio_ml.exceptions::exception_f::53] Traceback (most recent call last):
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/python/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connection.py", line 400, in request
+    self.endheaders()
+  File "/opt/python/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/python/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/opt/python/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/python/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='0.0.0.0', port=8080): Max retries exceeded with url: /data/upload/3/5aed5a4c-3.jpg (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/python/lib/python3.10/site-packages/label_studio_ml/exceptions.py", line 39, in exception_f
+    return f(*args, **kwargs)
+  File "/opt/python/lib/python3.10/site-packages/label_studio_ml/api.py", line 69, in _predict
+    response = model.predict(tasks, context=context, **params)
+  File "/app/doctr_labeling.py", line 73, in predict
+    img_path = get_image_local_path(
+  File "/opt/python/lib/python3.10/site-packages/label_studio_ml/utils.py", line 67, in get_image_local_path
+    image_local_path = get_local_path(
+  File "/opt/python/lib/python3.10/site-packages/label_studio_tools/core/utils/io.py", line 104, in get_local_path
+    r = requests.get(url, stream=True, headers=headers)
+  File "/opt/python/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/python/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/python/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/python/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/python/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='0.0.0.0', port=8080): Max retries exceeded with url: /data/upload/3/5aed5a4c-3.jpg (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+Traceback (most recent call last):
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/opt/python/lib/python3.10/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connectionpool.py", line 496, in _make_request
+    conn.request(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connection.py", line 400, in request
+    self.endheaders()
+  File "/opt/python/lib/python3.10/http/client.py", line 1278, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/opt/python/lib/python3.10/http/client.py", line 1038, in _send_output
+    self.send(msg)
+  File "/opt/python/lib/python3.10/http/client.py", line 976, in send
+    self.connect()
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connection.py", line 238, in connect
+    self.sock = self._new_conn()
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/python/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+  File "/opt/python/lib/python3.10/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='0.0.0.0', port=8080): Max retries exceeded with url: /data/upload/3/5aed5a4c-3.jpg (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/python/lib/python3.10/site-packages/label_studio_ml/exceptions.py", line 39, in exception_f
+    return f(*args, **kwargs)
+  File "/opt/python/lib/python3.10/site-packages/label_studio_ml/api.py", line 69, in _predict
+    response = model.predict(tasks, context=context, **params)
+  File "/app/doctr_labeling.py", line 73, in predict
+    img_path = get_image_local_path(
+  File "/opt/python/lib/python3.10/site-packages/label_studio_ml/utils.py", line 67, in get_image_local_path
+    image_local_path = get_local_path(
+  File "/opt/python/lib/python3.10/site-packages/label_studio_tools/core/utils/io.py", line 104, in get_local_path
+    r = requests.get(url, stream=True, headers=headers)
+  File "/opt/python/lib/python3.10/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/opt/python/lib/python3.10/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/opt/python/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/opt/python/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/opt/python/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='0.0.0.0', port=8080): Max retries exceeded with url: /data/upload/3/5aed5a4c-3.jpg (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+[2024-03-21 13:52:01,931] [DEBUG] [label_studio_ml.api::log_response_info::185] Response status: 500 INTERNAL SERVER ERROR
+[2024-03-21 13:52:01,931] [DEBUG] [label_studio_ml.api::log_response_info::186] Response headers: Content-Type: application/json
+Content-Length: 4821
+
+
+[2024-03-21 13:52:01,931] [DEBUG] [label_studio_ml.api::log_response_info::187] Response body: b'{"detail":"ConnectionError: HTTPConnectionPool(host=\'0.0.0.0\', port=8080): Max retries exceeded with url: /data/upload/3/5aed5a4c-3.jpg (Caused by NewConnectionError(\'<urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused\'))","request":{},"result":{"traceback":"Traceback (most recent call last):\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/connection.py\\", line 198, in _new_conn\\n    sock = connection.create_connection(\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/util/connection.py\\", line 85, in create_connection\\n    raise err\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/util/connection.py\\", line 73, in create_connection\\n    sock.connect(sa)\\nConnectionRefusedError: [Errno 111] Connection refused\\n\\nThe above exception was the direct cause of the following exception:\\n\\nTraceback (most recent call last):\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/connectionpool.py\\", line 793, in urlopen\\n    response = self._make_request(\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/connectionpool.py\\", line 496, in _make_request\\n    conn.request(\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/connection.py\\", line 400, in request\\n    self.endheaders()\\n  File \\"/opt/python/lib/python3.10/http/client.py\\", line 1278, in endheaders\\n    self._send_output(message_body, encode_chunked=encode_chunked)\\n  File \\"/opt/python/lib/python3.10/http/client.py\\", line 1038, in _send_output\\n    self.send(msg)\\n  File \\"/opt/python/lib/python3.10/http/client.py\\", line 976, in send\\n    self.connect()\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/connection.py\\", line 238, in connect\\n    self.sock = self._new_conn()\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/connection.py\\", line 213, in _new_conn\\n    raise NewConnectionError(\\nurllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused\\n\\nThe above exception was the direct cause of the following exception:\\n\\nTraceback (most recent call last):\\n  File \\"/opt/python/lib/python3.10/site-packages/requests/adapters.py\\", line 486, in send\\n    resp = conn.urlopen(\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/connectionpool.py\\", line 847, in urlopen\\n    retries = retries.increment(\\n  File \\"/opt/python/lib/python3.10/site-packages/urllib3/util/retry.py\\", line 515, in increment\\n    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]\\nurllib3.exceptions.MaxRetryError: HTTPConnectionPool(host=\'0.0.0.0\', port=8080): Max retries exceeded with url: /data/upload/3/5aed5a4c-3.jpg (Caused by NewConnectionError(\'<urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused\'))\\n\\nDuring handling of the above exception, another exception occurred:\\n\\nTraceback (most recent call last):\\n  File \\"/opt/python/lib/python3.10/site-packages/label_studio_ml/exceptions.py\\", line 39, in exception_f\\n    return f(*args, **kwargs)\\n  File \\"/opt/python/lib/python3.10/site-packages/label_studio_ml/api.py\\", line 69, in _predict\\n    response = model.predict(tasks, context=context, **params)\\n  File \\"/app/doctr_labeling.py\\", line 73, in predict\\n    img_path = get_image_local_path(\\n  File \\"/opt/python/lib/python3.10/site-packages/label_studio_ml/utils.py\\", line 67, in get_image_local_path\\n    image_local_path = get_local_path(\\n  File \\"/opt/python/lib/python3.10/site-packages/label_studio_tools/core/utils/io.py\\", line 104, in get_local_path\\n    r = requests.get(url, stream=True, headers=headers)\\n  File \\"/opt/python/lib/python3.10/site-packages/requests/api.py\\", line 73, in get\\n    return request(\\"get\\", url, params=params, **kwargs)\\n  File \\"/opt/python/lib/python3.10/site-packages/requests/api.py\\", line 59, in request\\n    return session.request(method=method, url=url, **kwargs)\\n  File \\"/opt/python/lib/python3.10/site-packages/requests/sessions.py\\", line 589, in request\\n    resp = self.send(prep, **send_kwargs)\\n  File \\"/opt/python/lib/python3.10/site-packages/requests/sessions.py\\", line 703, in send\\n    r = adapter.send(request, **kwargs)\\n  File \\"/opt/python/lib/python3.10/site-packages/requests/adapters.py\\", line 519, in send\\n    raise ConnectionError(e, request=request)\\nrequests.exceptions.ConnectionError: HTTPConnectionPool(host=\'0.0.0.0\', port=8080): Max retries exceeded with url: /data/upload/3/5aed5a4c-3.jpg (Caused by NewConnectionError(\'<urllib3.connection.HTTPConnection object at 0x79f600ee77c0>: Failed to establish a new connection: [Errno 111] Connection refused\'))\\n"},"status":500}\n'

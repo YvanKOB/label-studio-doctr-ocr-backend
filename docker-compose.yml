@@ -10,6 +10,7 @@ services:
       - THREADS=8
       - PORT=9090
     volumes:
-      - "./data:/data"
+      - "./data/server:/data"
+      - "./logs:/tmp"
     ports:
       - "9090:9090"

@@ -7,4 +7,4 @@ COPY * /app/
 
 EXPOSE 9090
 
-CMD gunicorn --preload --bind :$PORT --workers $WORKERS --threads $THREADS --timeout 0 _wsgi:app
+CMD gunicorn --bind :${PORT:-9090} --workers ${WORKERS:-1} --threads ${THREADS:-4} --timeout 0 _wsgi:app

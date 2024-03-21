@@ -15,7 +15,7 @@ from typing import List, Dict, Optional
 logger = logging.getLogger(__name__)
 
 # Label Studio
-LABEL_STUDIO_HOST = os.environ.get("LABEL_STUDIO_HOST", "http://0.0.0.0:8080")  # TODO: change me
+LABEL_STUDIO_HOST = os.environ.get("LABEL_STUDIO_HOST", "http://localhost:8080")  # TODO: change me
 LABEL_STUDIO_ACCESS_TOKEN = os.environ.get("LABEL_STUDIO_ACCESS_TOKEN", "6f206c188db5267cbd59bb8c7b3a7b3d41ed5890")  # TODO: change me
 
 # S3 credentials
