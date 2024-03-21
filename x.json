@@ -1,0 +1,197 @@
+{
+    "action": "ANNOTATION_UPDATED",
+    "annotation": {
+        "id": 1,
+        "result": [
+            {
+                "value": {},
+                "id": "xzrE58_NB-",
+                "from_name": "label",
+                "to_name": "image",
+                "type": "choices",
+                "origin": "prediction"
+            }
+        ],
+        "was_cancelled": false,
+        "ground_truth": false,
+        "created_at": "2024-03-21T09:27:25.303805Z",
+        "updated_at": "2024-03-21T11:21:33.268100Z",
+        "draft_created_at": null,
+        "lead_time": 2118.973,
+        "prediction": {},
+        "result_count": 0,
+        "unique_id": "73f10f70-6bc0-4cbf-8f24-f2baa302f9c0",
+        "import_id": null,
+        "last_action": null,
+        "task": 1,
+        "project": 2,
+        "completed_by": 1,
+        "updated_by": 1,
+        "parent_prediction": 1,
+        "parent_annotation": null,
+        "last_created_by": null
+    },
+    "project": {
+        "id": 2,
+        "task_number": 3,
+        "finished_task_number": 3,
+        "total_predictions_number": 3,
+        "total_annotations_number": 3,
+        "num_tasks_with_annotations": 3,
+        "useful_annotation_number": 3,
+        "ground_truth_number": 0,
+        "skipped_annotations_number": 0,
+        "title": "OCRTest",
+        "description": "",
+        "label_config": "<View>\\n  <Image name=\\"image\\" value=\\"$ocr\\"/>\\n\\n  <Labels name=\\"label\\" toName=\\"image\\">\\n    <Label value=\\"Text\\" background=\\"green\\"/>\\n    <Label value=\\"Handwriting\\" background=\\"blue\\"/>\\n  </Labels>\\n\\n  <Rectangle name=\\"bbox\\" toName=\\"image\\" strokeWidth=\\"3\\"/>\\n  <Polygon name=\\"poly\\" toName=\\"image\\" strokeWidth=\\"3\\"/>\\n\\n  <TextArea name=\\"transcription\\" toName=\\"image\\"\\n            editable=\\"true\\"\\n            perRegion=\\"true\\"\\n            required=\\"true\\"\\n            maxSubmissions=\\"1\\"\\n            rows=\\"5\\"\\n            placeholder=\\"Recognized Text\\"\\n            displayMode=\\"region-list\\"\\n            />\\n</View>",
+        "parsed_label_config": {
+            "label": {
+                "type": "Labels",
+                "to_name": [
+                    "image"
+                ],
+                "inputs": [
+                    {
+                        "type": "Image",
+                        "value": "ocr"
+                    }
+                ],
+                "labels": [
+                    "Text",
+                    "Handwriting"
+                ],
+                "labels_attrs": {
+                    "Text": {
+                        "value": "Text",
+                        "background": "green"
+                    },
+                    "Handwriting": {
+                        "value": "Handwriting",
+                        "background": "blue"
+                    }
+                }
+            },
+            "bbox": {
+                "type": "Rectangle",
+                "to_name": [
+                    "image"
+                ],
+                "inputs": [
+                    {
+                        "type": "Image",
+                        "value": "ocr"
+                    }
+                ],
+                "labels": [],
+                "labels_attrs": {}
+            },
+            "poly": {
+                "type": "Polygon",
+                "to_name": [
+                    "image"
+                ],
+                "inputs": [
+                    {
+                        "type": "Image",
+                        "value": "ocr"
+                    }
+                ],
+                "labels": [],
+                "labels_attrs": {}
+            },
+            "transcription": {
+                "type": "TextArea",
+                "to_name": [
+                    "image"
+                ],
+                "inputs": [
+                    {
+                        "type": "Image",
+                        "value": "ocr"
+                    }
+                ],
+                "labels": [],
+                "labels_attrs": {}
+            }
+        },
+        "label_config_hash": 7122123856954531567,
+        "expert_instruction": "",
+        "show_instruction": false,
+        "show_skip_button": true,
+        "enable_empty_annotation": true,
+        "reveal_preannotations_interactively": false,
+        "show_annotation_history": false,
+        "show_collab_predictions": true,
+        "evaluate_predictions_automatically": false,
+        "token": "QPrvzPqU6zILqHFjAuCPc6g3iM85u17pTEm7PaQu",
+        "result_count": 0,
+        "color": "#FFFFFF",
+        "maximum_annotations": 1,
+        "min_annotations_to_start_training": 0,
+        "control_weights": {
+            "label": {
+                "overall": 1.0,
+                "type": "Labels",
+                "labels": {
+                    "Text": 1.0,
+                    "Handwriting": 1.0
+                }
+            },
+            "bbox": {
+                "overall": 1.0,
+                "type": "Rectangle",
+                "labels": {}
+            },
+            "poly": {
+                "overall": 1.0,
+                "type": "Polygon",
+                "labels": {}
+            },
+            "transcription": {
+                "overall": 1.0,
+                "type": "TextArea",
+                "labels": {}
+            }
+        },
+        "model_version": "0.0.1",
+        "data_types": {
+            "ocr": "Image"
+        },
+        "is_draft": false,
+        "is_published": false,
+        "created_at": "2024-03-21T09:18:06.269626Z",
+        "updated_at": "2024-03-21T11:21:04.866052Z",
+        "sampling": "Sequential sampling",
+        "skip_queue": "REQUEUE_FOR_OTHERS",
+        "show_ground_truth_first": false,
+        "show_overlap_first": false,
+        "overlap_cohort_percentage": 100,
+        "task_data_login": null,
+        "task_data_password": null,
+        "pinned_at": null,
+        "organization": 1,
+        "created_by": 1
+    },
+    "task": {
+        "id": 1,
+        "data": {
+            "ocr": "/data/upload/2/ccf4e7f8-1.jpg"
+        },
+        "meta": {},
+        "created_at": "2024-03-21T09:27:13.401889Z",
+        "updated_at": "2024-03-21T11:21:33.297734Z",
+        "is_labeled": true,
+        "overlap": 1,
+        "inner_id": 1,
+        "total_annotations": 1,
+        "cancelled_annotations": 0,
+        "total_predictions": 1,
+        "comment_count": 0,
+        "unresolved_comment_count": 0,
+        "last_comment_updated_at": null,
+        "project": 2,
+        "updated_by": 1,
+        "file_upload": 1,
+        "comment_authors": []
+    }
+}

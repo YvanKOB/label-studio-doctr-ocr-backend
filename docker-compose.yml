@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  server:
+    container_name: doctr-backend
+    build: .
+    environment:
+      - LOG_LEVEL=DEBUG
+      - WORKERS=1
+      - THREADS=8
+      - PORT=9090
+    volumes:
+      - "./data:/data"
+    ports:
+      - "9090:9090"
